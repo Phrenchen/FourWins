@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+      body { font-family: Tahoma, Geneva, sans-serif; text-align: center; }
+    </style>
+    
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+    <!-- colyseus.js client (npm run bundle-colyseus-client) -->
+    <script type="text/javascript" src="colyseus.js"></script>
+
+  </head>
+  <body>
+    <div class="content">
+      <div class="messages" id="messages">
+        <strong>Messages</strong><br>
+        <form id="form">
+          <input type="text" id="input" value="" />
+          <input type="submit" value="send" />
+        </form>
+      </div>
+      <div class="matchfield">
+        <h1 class="title">4 Gewinnt</h1>
+        <div class="match_grid">
+          <div class="cell" onclick="cellClicked(1)"></div>
+          <div class="cell" onclick="cellClicked(2)"></div>
+          <div class="cell" onclick="cellClicked(3)"></div>
+          <div class="cell" onclick="cellClicked(4)"></div>
+          <div class="cell" onclick="cellClicked(5)"></div>
+          <div class="cell" onclick="cellClicked(6)"></div>
+          <div class="cell" onclick="cellClicked(7)"></div>
+
+          <div class="cell" onclick="cellClicked(8)"></div>
+          <div class="cell" onclick="cellClicked(9)"></div>
+          <div class="cell" onclick="cellClicked(10)"></div>
+          <div class="cell" onclick="cellClicked(11)"></div>
+          <div class="cell" onclick="cellClicked(12)"></div>
+          <div class="cell" onclick="cellClicked(13)"></div>
+          <div class="cell" onclick="cellClicked(14)"></div>
+
+          <div class="cell" onclick="cellClicked(15)"></div>
+          <div class="cell" onclick="cellClicked(16)"></div>
+          <div class="cell" onclick="cellClicked(17)"></div>
+          <div class="cell" onclick="cellClicked(18)"></div>
+          <div class="cell" onclick="cellClicked(19)"></div>
+          <div class="cell" onclick="cellClicked(20)"></div>
+          <div class="cell" onclick="cellClicked(21)"></div>
+
+          <div class="cell" onclick="cellClicked(22)"></div>
+          <div class="cell" onclick="cellClicked(23)"></div>
+          <div class="cell" onclick="cellClicked(24)"></div>
+          <div class="cell" onclick="cellClicked(25)"></div>
+          <div class="cell" onclick="cellClicked(26)"></div>
+          <div class="cell" onclick="cellClicked(27)"></div>
+          <div class="cell" onclick="cellClicked(28)"></div>
+
+          <div class="cell" onclick="cellClicked(29)"></div>
+          <div class="cell" onclick="cellClicked(30)"></div>
+          <div class="cell" onclick="cellClicked(31)"></div>
+          <div class="cell" onclick="cellClicked(32)"></div>
+          <div class="cell" onclick="cellClicked(33)"></div>
+          <div class="cell" onclick="cellClicked(34)"></div>
+          <div class="cell" onclick="cellClicked(35)"></div>
+
+          <div class="cell" onclick="cellClicked(36)"></div>
+          <div class="cell" onclick="cellClicked(37)"></div>
+          <div class="cell" onclick="cellClicked(38)"></div>
+          <div class="cell" onclick="cellClicked(39)"></div>
+          <div class="cell" onclick="cellClicked(40)"></div>
+          <div class="cell" onclick="cellClicked(41)"></div>
+          <div class="cell" onclick="cellClicked(42)"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      function cellClicked(cellID){
+        console.log("cell clicked: " + cellID);
+      }
+
+      var host = window.document.location.host.replace(/:.*/, '');
+
+      var client = new Colyseus.Client(location.protocol.replace("http", "ws") + host + (location.port ? ':'+location.port : ''));
+      var room = client.join("chat");
+      room.onJoin.add(function () {
+        console.log("joined");
+      });
+
+      room.onStateChange.addOnce(function(state) {
+        console.log("initial room state:", state);
+      });
+
+      // new room state
+      room.onStateChange.add(function(state) {
+        // this signal is triggered on each patch
+      });
+
+      // listen to patches coming from the server
+      room.onMessage.add(function(message) {
+        var p = document.createElement("p");
+        p.innerHTML = message;
+        document.querySelector("#messages").appendChild(p);
+      });
+
+      // send message to room on submit
+      document.querySelector("#form").onsubmit = function(e) {
+        e.preventDefault();
+
+        var input = document.querySelector("#input");
+
+        console.log("input:", input.value);
+
+        // send data to room
+        room.send({ message: input.value });
+
+        // clear input
+        input.value = "";
+      }
+
+    </script>
+  </body>
+</html>

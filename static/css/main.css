@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    background-size: cover;
+    
+    padding: 0;
+    height: 100vh;
+}
+
+.messages{
+    background-color: aquamarine;
+    border: 1px black solid;
+    
+    margin: 5px 5px 5px 5px ;
+    width: 30%;
+}
+
+.matchfield{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    margin: 5px 5px 5px 5px ;
+    border: 1px black ;
+}
+
+.title{
+    border: 1px black solid;
+    margin: 0;
+    padding: 0;
+    background-color: cornsilk;
+}
+
+.match_grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    margin: 5px 0px 0px 0px ;
+    padding: 0;
+    border: 1px black solid;
+    height: 100%;
+
+    background-color: lightskyblue;
+}
+
+.cell{
+    border: 1px red dotted;
+    cursor: pointer;
+}
+.cell:hover{
+    border: 1px red solid;
+
+}
