@@ -80,6 +80,8 @@
 
       function cellClicked(cellID){
         console.log("cell clicked: " + cellID);
+        // send data to room
+        // room.send({ selectedCell: input.value });
       }
 
       var host = window.document.location.host.replace(/:.*/, '');
@@ -101,8 +103,19 @@
 
       // listen to patches coming from the server
       room.onMessage.add(function(message) {
+        console.log("received message: ");
+        console.log(message);
+        console.log(message.message);
+        console.log(message.test);
+        console.log(message.greetings);
         var p = document.createElement("p");
-        p.innerHTML = message;
+        if(typeof(message) === "string"){
+          p.innerHTML = message;
+        }
+        else if(typeof(message) === "object"){
+          p.innerHTML = message.message;
+        }
+
         document.querySelector("#messages").appendChild(p);
       });
 
@@ -115,7 +128,7 @@
         console.log("input:", input.value);
 
         // send data to room
-        room.send({ message: input.value });
+        room.send({ message: input.value, test: "omg another param" });
 
         // clear input
         input.value = "";
