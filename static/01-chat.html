@@ -25,60 +25,63 @@
       <div class="matchfield">
         <h1 class="title">4 Gewinnt</h1>
         <div class="match_grid">
-          <div class="cell" onclick="cellClicked(0)"></div>
-          <div class="cell" onclick="cellClicked(1)"></div>
-          <div class="cell" onclick="cellClicked(2)"></div>
-          <div class="cell" onclick="cellClicked(3)"></div>
-          <div class="cell" onclick="cellClicked(4)"></div>
-          <div class="cell" onclick="cellClicked(5)"></div>
-          <div class="cell" onclick="cellClicked(6)"></div>
+          <div class="cell" id="cell_0" onclick="cellClicked(0)"></div>
+          <div class="cell" id="cell_1" onclick="cellClicked(1)"></div>
+          <div class="cell" id="cell_2" onclick="cellClicked(2)"></div>
+          <div class="cell" id="cell_3" onclick="cellClicked(3)"></div>
+          <div class="cell" id="cell_4" onclick="cellClicked(4)"></div>
+          <div class="cell" id="cell_5" onclick="cellClicked(5)"></div>
+          <div class="cell" id="cell_6" onclick="cellClicked(6)"></div>
 
-          <div class="cell" onclick="cellClicked(7)"></div>
-          <div class="cell" onclick="cellClicked(8)"></div>
-          <div class="cell" onclick="cellClicked(9)"></div>
-          <div class="cell" onclick="cellClicked(10)"></div>
-          <div class="cell" onclick="cellClicked(11)"></div>
-          <div class="cell" onclick="cellClicked(12)"></div>
-          <div class="cell" onclick="cellClicked(13)"></div>
+          <div class="cell" id="cell_7" onclick="cellClicked(7)"></div>
+          <div class="cell" id="cell_8" onclick="cellClicked(8)"></div>
+          <div class="cell" id="cell_9" onclick="cellClicked(9)"></div>
+          <div class="cell" id="cell_10" onclick="cellClicked(10)"></div>
+          <div class="cell" id="cell_11" onclick="cellClicked(11)"></div>
+          <div class="cell" id="cell_12" onclick="cellClicked(12)"></div>
+          <div class="cell" id="cell_13" onclick="cellClicked(13)"></div>
 
-          <div class="cell" onclick="cellClicked(14)"></div>
-          <div class="cell" onclick="cellClicked(15)"></div>
-          <div class="cell" onclick="cellClicked(16)"></div>
-          <div class="cell" onclick="cellClicked(17)"></div>
-          <div class="cell" onclick="cellClicked(18)"></div>
-          <div class="cell" onclick="cellClicked(19)"></div>
-          <div class="cell" onclick="cellClicked(20)"></div>
+          <div class="cell" id="cell_14" onclick="cellClicked(14)"></div>
+          <div class="cell" id="cell_15" onclick="cellClicked(15)"></div>
+          <div class="cell" id="cell_16" onclick="cellClicked(16)"></div>
+          <div class="cell" id="cell_17" onclick="cellClicked(17)"></div>
+          <div class="cell" id="cell_18" onclick="cellClicked(18)"></div>
+          <div class="cell" id="cell_19" onclick="cellClicked(19)"></div>
+          <div class="cell" id="cell_20" onclick="cellClicked(20)"></div>
 
-          <div class="cell" onclick="cellClicked(21)"></div>
-          <div class="cell" onclick="cellClicked(22)"></div>
-          <div class="cell" onclick="cellClicked(23)"></div>
-          <div class="cell" onclick="cellClicked(24)"></div>
-          <div class="cell" onclick="cellClicked(25)"></div>
-          <div class="cell" onclick="cellClicked(26)"></div>
-          <div class="cell" onclick="cellClicked(27)"></div>
+          <div class="cell" id="cell_21" onclick="cellClicked(21)"></div>
+          <div class="cell" id="cell_22" onclick="cellClicked(22)"></div>
+          <div class="cell" id="cell_23" onclick="cellClicked(23)"></div>
+          <div class="cell" id="cell_24" onclick="cellClicked(24)"></div>
+          <div class="cell" id="cell_25" onclick="cellClicked(25)"></div>
+          <div class="cell" id="cell_26" onclick="cellClicked(26)"></div>
+          <div class="cell" id="cell_27" onclick="cellClicked(27)"></div>
 
-          <div class="cell" onclick="cellClicked(28)"></div>
-          <div class="cell" onclick="cellClicked(29)"></div>
-          <div class="cell" onclick="cellClicked(30)"></div>
-          <div class="cell" onclick="cellClicked(31)"></div>
-          <div class="cell" onclick="cellClicked(32)"></div>
-          <div class="cell" onclick="cellClicked(33)"></div>
-          <div class="cell" onclick="cellClicked(34)"></div>
+          <div class="cell" id="cell_28" onclick="cellClicked(28)"></div>
+          <div class="cell" id="cell_29" onclick="cellClicked(29)"></div>
+          <div class="cell" id="cell_30" onclick="cellClicked(30)"></div>
+          <div class="cell" id="cell_31" onclick="cellClicked(31)"></div>
+          <div class="cell" id="cell_32" onclick="cellClicked(32)"></div>
+          <div class="cell" id="cell_33" onclick="cellClicked(33)"></div>
+          <div class="cell" id="cell_34" onclick="cellClicked(34)"></div>
 
-          <div class="cell" onclick="cellClicked(35)"></div>
-          <div class="cell" onclick="cellClicked(36)"></div>
-          <div class="cell" onclick="cellClicked(37)"></div>
-          <div class="cell" onclick="cellClicked(38)"></div>
-          <div class="cell" onclick="cellClicked(39)"></div>
-          <div class="cell" onclick="cellClicked(40)"></div>
-          <div class="cell" onclick="cellClicked(41)"></div>
+          <div class="cell" id="cell_35" onclick="cellClicked(35)"></div>
+          <div class="cell" id="cell_36" onclick="cellClicked(36)"></div>
+          <div class="cell" id="cell_37" onclick="cellClicked(37)"></div>
+          <div class="cell" id="cell_38" onclick="cellClicked(38)"></div>
+          <div class="cell" id="cell_39" onclick="cellClicked(39)"></div>
+          <div class="cell" id="cell_40" onclick="cellClicked(40)"></div>
+          <div class="cell" id="cell_41" onclick="cellClicked(41)"></div>
         </div>
       </div>
     </div>
 
     <script>
+      let columnCount = 7;
+      let playerColor1 = "black";
+      let playerColor2 = "white";
+
       function getColumnId(cellId){
-        let columnCount = 7;
         let columnId = (cellId % columnCount);
         return columnId;
 
@@ -93,7 +96,6 @@
 
         // send data to room
         room.send({ 
-          playerId: room.sessionId,
           selectedColumn: columnId
         });
       }
@@ -101,9 +103,9 @@
       var host = window.document.location.host.replace(/:.*/, '');
 
       var client = new Colyseus.Client(location.protocol.replace("http", "ws") + host + (location.port ? ':' + location.port : ''));
-      console.log(client);
+      // console.log(client);
       var room = client.join("chat");
-      console.log(room);
+      // console.log(room);
       room.onJoin.add(function () {
         console.log("joined");
       });
@@ -119,21 +121,40 @@
 
       // listen to patches coming from the server
       room.onMessage.add(function(message) {
-        console.log("received message: ");
-        console.log(message);
-        console.log(message.message);
-        console.log(message.test);
-        console.log(message.greetings);
+        // console.log("received message: ");
+        // console.log(message);
+
         var p = document.createElement("p");
         if(typeof(message) === "string"){
           p.innerHTML = message;
+          document.querySelector("#messages").appendChild(p);
         }
-        else if(typeof(message) === "object"){
-          p.innerHTML = message.message;
+        if(message.match){
+          updateMatch(message.match);
         }
-
-        document.querySelector("#messages").appendChild(p);
+        
       });
+      
+      function updateMatch(match){
+        if(!match.matchState){
+          return;
+        }
+        let grid = match.matchState;
+        let cell;
+
+        for(let r=0; r<grid.length; r++){
+          for(let c=0; c<grid[r].length; c++){
+            cell = grid[r][c];
+            if(cell !== "-"){
+              let cellId = r * columnCount + c;
+              let color = cell === "0" ? playerColor1 : playerColor2;
+              document.querySelector("#cell_" + cellId).style.backgroundColor = color;
+              
+              cellObj.style.backgroundColor = color;
+            }
+          }
+        }
+      }
 
       // send message to room on submit
       document.querySelector("#form").onsubmit = function(e) {
