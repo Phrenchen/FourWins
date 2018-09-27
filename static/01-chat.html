@@ -148,9 +148,8 @@
             if(cell !== "-"){
               let cellId = r * columnCount + c;
               let color = cell === "0" ? playerColor1 : playerColor2;
-              document.querySelector("#cell_" + cellId).style.backgroundColor = color;
               
-              cellObj.style.backgroundColor = color;
+              document.querySelector("#cell_" + cellId).style.backgroundColor = color;
             }
           }
         }
