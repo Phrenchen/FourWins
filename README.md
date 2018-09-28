@@ -10,3 +10,5 @@ Links
 License
 ---
 MIT
+
+This is awesome! Thanks, Endel!
