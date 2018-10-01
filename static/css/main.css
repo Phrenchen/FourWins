@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     border: 0;
+    background-color: darkgrey;
 }
 
 .content{
@@ -13,12 +14,33 @@ body{
     height: 100vh;
 }
 
+.left-container{
+    width: 30%;
+}
+
 .messages{
     background-color: aquamarine;
     border: 1px black solid;
     
-    margin: 5px 5px 5px 5px ;
-    width: 30%;
+    height: 60%;
+}
+
+.player-info{
+    height: 15%;
+    margin: 5px 0px 5px 0px;
+    background-color: lightskyblue;
+    border-radius: 50%;
+}
+
+.player1{
+    color: white;
+    border: 2px solid lightskyblue;
+    /* background: white; */
+}
+.player2{
+    color: black;
+    border: 2px solid lightskyblue;
+    /* background: black; */
 }
 
 .matchfield{

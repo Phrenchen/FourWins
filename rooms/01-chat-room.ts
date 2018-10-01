@@ -7,6 +7,8 @@ export class ChatRoom extends Room {
 
     private columnCount:number = 7;
     private rowCount:number = 6;
+    private playerColor1:string = "white";
+    private playerColor2:string = "black";
     
     // 2 player per match of "4 Wins"
     // this room supports only 2 clients connected
@@ -35,7 +37,9 @@ export class ChatRoom extends Room {
             id: matchId,
             players: players,
             activePlayer: "",
-            matchState: state
+            matchState: state,
+            playerColor1: this.playerColor1,
+            playerColor2: this.playerColor2
         };
     }
 
@@ -71,7 +75,7 @@ export class ChatRoom extends Room {
 
             // next player
             match.activePlayer = firstPlayerActive ? match.players[1] : match.players[0];
-
+            
             this.logMatch(match);
             return true;
         }
@@ -177,5 +181,7 @@ interface Match{
     players: Array<string>;
     activePlayer:string;
     matchState: Array<Array<string>>;
+    playerColor1: string;
+    playerColor2: string;
 }
 
